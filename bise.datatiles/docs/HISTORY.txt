@@ -1,0 +1,28 @@
+Changelog
+=========
+
+1.5.dev0 - (unreleased)
+-----------------------
+
+1.4 - (2018-01-24)
+------------------
+* Add style for further links listing
+  [krisztina #85852]
+
+1.3 - (2017-09-22)
+------------------
+* Bug fix: only trigger data gathering for Elasticsearch on modify event
+  [tiberich #85852]
+
+1.2 - (2017-06-09)
+------------------
+* Change: improve the zoom for data tiles
+
+1.1 - (2017-06-08)
+------------------
+* Feature: implement a generic zoom for any EEA content type.
+
+1.0 - (2017-04-13)
+------------------
+- Initial release
+

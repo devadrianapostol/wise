@@ -1,0 +1,11 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+  xmlns:five="http://namespaces.zope.org/five"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  xmlns:browser="http://namespaces.zope.org/browser">
+
+  <subscriber factory=".modifiers.FolderPartsModifier"
+    provides="eea.rdfmarshaller.interfaces.ISurfResourceModifier" />
+
+  <!-- <adapter factory=".GenericPublisherOrganisation" /> -->
+
+</configure>

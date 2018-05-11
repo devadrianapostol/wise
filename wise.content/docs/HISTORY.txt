@@ -1,0 +1,23 @@
+Changelog
+=========
+
+1.0dev (unreleased)
+------------------
+* Feature: Added browserview for creating the issues
+  [iulianpetchesi #86754]
+* Feature: Added redmine configuration forms
+  [iulianpetchesi #86754]
+* Feature: Added link to folder in user actions
+  [iulianpetchesi #86898]
+* Feature: Added new image content type + upgrade step + modifications
+  [iulianpetchesi #86898]
+* Feature: Added image content type override + changed text field to richtext
+  [iulianpetchesi #86898]
+* Feature: Added contact form override and recaptcha
+  [iulianpetchesi #86755]
+* Task: Added eea.pdf && eea.cache configurations + eea.pdf body overrides for
+  folders and normal pages
+  [iulianpetchesi #82723]
+* Feature: Added new wise_generic_workflow with check-in/out &&
+  upgrade steps/procedure
+  [iulianpetchesi #85931]

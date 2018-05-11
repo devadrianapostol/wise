@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<object name="portal_workflow" meta_type="Plone Workflow Tool">
+    <property
+        name="title">Contains workflow definitions for your portal</property>
+    <object name="wise_generic_workflow" meta_type="Workflow"/>
+    <bindings>
+        <type type_id="collective.cover.content">
+            <bound-workflow workflow_id="wise_generic_workflow"/>
+        </type>
+
+        <default>
+            <bound-workflow workflow_id="wise_generic_workflow"/>
+        </default>
+
+    </bindings>
+</object>

@@ -1,0 +1,28 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="example.dexterityforms">
+
+  <subscriber factory=".modifiers.ContentLicenseModifier"
+    provides="eea.rdfmarshaller.interfaces.ISurfResourceModifier" />
+
+  <browser:page
+    name="licenses-settings"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".license.LicensesView"
+    permission="cmf.ManagePortal"
+    />
+
+  <browser:page
+    name="portal-type-licenses-settings"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".license.PortalTypeLicensesView"
+    permission="cmf.ManagePortal"
+    />
+
+  <utility
+    component=".license.LicensesVocabularyFactory"
+    name="eea.rdfmarshaller.licenses" />
+
+</configure>

@@ -1,0 +1,10 @@
+portal_depiction,DepictionTool
+portal_vocabularies,VocabularyLibrary
+portal_relations,EEARelationsTool
+topics,Folder
+policy,Folder
+data,Folder
+research,Folder
+marine,Folder
+countries,Folder
+other-initiatives,Folder

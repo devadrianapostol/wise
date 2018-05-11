@@ -1,0 +1,89 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:z3c="http://namespaces.zope.org/z3c"
+  i18n_domain="wise.content">
+
+  <include file="overrides.zcml" />
+
+  <browser:page
+    for="plone.dexterity.interfaces.IDexterityContainer"
+    class="plone.app.contenttypes.browser.folder.FolderView"
+    name="text_view"
+    template="pt/folder_text_view.pt"
+    menu="plone_displayviews"
+    title="Text view"
+    permission="zope2.View"
+    />
+
+  <browser:page
+      for="*"
+      name="iterate_control"
+      class=".IterateControl"
+      permission="zope2.View"
+      allowed_attributes="checkin_allowed checkout_allowed cancel_allowed is_checkout"
+      layer="wise.content.interfaces.IWiseContentLayer"
+      />
+
+  <browser:page
+      class=".misc.FixCheckout"
+      for="*"
+      name="fix-checkout"
+      permission="cmf.ManagePortal"
+      />
+
+
+  <browser:page
+      name="view"
+      for="wise.content.contenttypes.IRichImage"
+      template="pt/richimage.pt"
+      permission="zope2.View"
+      menu="plone_displayviews"
+      title="View Image"
+      />
+
+
+  <browser:page
+      name="richimage_view_fullscreen"
+      for="wise.content.contenttypes.IRichImage"
+      template="pt/richimage_view_fullscreen.pt"
+      permission="zope2.View"
+      menu="plone_displayviews"
+      title="View Image Fullscreen"
+      />
+
+
+  <!-- Redmine control panel entry -->
+  <adapter factory=".misc.RedmineControlPanelAdapter" />
+
+  <browser:page
+    name="redmine-settings"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".misc.RedmineControlPanel"
+    permission="cmf.ManagePortal"
+    />
+
+  <browser:page
+      class=".misc.IssueCreate"
+      for="*"
+      name="create-redmine-issue"
+      permission="cmf.ManagePortal"
+      />
+
+  <subscriber
+    for="plone.app.contenttypes.content.Folder
+         OFS.interfaces.IObjectWillBeRemovedEvent"
+    handler=".misc.preventFolderDeletionEvent"
+  />
+
+  <browser:page
+      for="*"
+      name="msfd_search"
+      class=".search.SearchDemo"
+      permission="zope2.View"
+      template='pt/msfd-search.pt'
+      />
+
+
+</configure>
